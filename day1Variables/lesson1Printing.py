@@ -5,6 +5,9 @@ print("print('what to print')")
 print("Hello World !")
 print("Hello Girl")
 
+print('She says "Hello" ')
+print("Hello" + " "+"Angela")
+
 print("Bla Bla Bla...")
 
 print("Hello Guys ......")
