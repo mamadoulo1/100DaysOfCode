@@ -6,4 +6,4 @@ weight = input()
 
 # Write your code below this line 👇
 bmi = round(float(weight)/(float(height)*float(height)))
-print(bmi)
+print(f"Your BMI is: {bmi}")
