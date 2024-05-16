@@ -18,7 +18,7 @@ while True:
     # Write an action using print
     # To debug: print("Debug messages...", file=sys.stderr, flush=True)
         mountain_list.append(mountain_h)
-    id_max =  mountain_list.index(max(mountain_list))
+    id_max = mountain_list.index(max(mountain_list))
 
     # The index of the mountain to fire on.
     print(id_max)
