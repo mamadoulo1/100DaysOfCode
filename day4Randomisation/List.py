@@ -13,3 +13,11 @@ print(states_of_america)
 dirty_dozen = ["Strawberries", "Spinach", "Kale", "Nectarines", "Apples", "Grapes",
                "Peaches", "Cherries", "Pears", "Tomatoes", "Celery", "Potatoes"]
 
+
+fruits = ['orange', 'apple', 'pear', 'banana', 'kiwi', 'apple', 'banana']
+print(fruits.count('apple'))
+print(fruits.index('banana'))
+fruits.append('grape')
+print(fruits.pop(1))
+print(fruits)
+
