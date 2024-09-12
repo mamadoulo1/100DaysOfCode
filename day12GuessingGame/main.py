@@ -11,6 +11,8 @@ result = random.randint(1, 100)
 
 # Include two different difficulty levels (e.g., 10 guesses in easy mode, only 5 guesses in hard mode).
 attempts = 0
+
+
 def set_difficulty():
     difficulty = input("Choose a difficulty. Type 'easy' or 'hard':")
     global attempts
@@ -21,6 +23,8 @@ def set_difficulty():
 
 
 should_continue = False
+
+
 def check_answer(guess, result):
     # Check user's guess against actual answer. Print "Too high." or "Too low." depending on the user's answer.
     global should_continue
@@ -32,6 +36,7 @@ def check_answer(guess, result):
         print("Too high.\nGuess again.")
     else:
         print("Too low.\nGuess again.")
+
 
 set_difficulty()
 while not should_continue:
@@ -45,10 +50,3 @@ while not should_continue:
     if attempts == 0:
         print("You've run out of guesses, you lose.")
         should_continue = True
-
-
-
-
-
-
-

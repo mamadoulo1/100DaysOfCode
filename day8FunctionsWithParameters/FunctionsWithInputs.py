@@ -8,17 +8,25 @@ def greet():
     print("Hello")
     print("Hello")
 
+
 def greet_with_name(name):
     print(f"Hello {name}")
+
 
 greet_with_name("Mamadou")
 
 
-#Functions with more than 1 input
+# Functions with more than 1 input
 def gree_with(name, location):
     print(f"My name is {name}")
     print(f"I live in {location}")
 
+
 gree_with("Mamadou", "Paris")
 
-#Functions with keywords arguments
+
+# Functions with keywords arguments
+
+
+def greeting():
+    print("Hello World")
