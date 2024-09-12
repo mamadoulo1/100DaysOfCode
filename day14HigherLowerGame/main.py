@@ -4,45 +4,47 @@ from game_data import *
 from art import *
 
 
-def celebrity():
-    choose = random.choice(data)
-    return choose
+# Format the account data into printable format.
+def format_data(account):
+    name = account['name']
+    description = account['description']
+    country = account['country']
+    return f"{name}, {description}, from {country}."
+
+
 
 
 score = 0
-should_continue = False
+should_continue = True
 
-
-def format_data(account):
-    account_name = account['name']
-    account_description = account['description']
-    account_country = account['country']
-    return f"{account_name}, a {account_description}, from {account_country}"
-
-
-def check_answer(guess, a_followers, b_followers):
-    if a_followers > b_followers:
-        return guess == 'a'
-    else:
-        return guess == 'b'
-
-
-should_continue = False
-while not should_continue:
-    celebrity1 = celebrity()
-    celebrity2 = celebrity()
-    if celebrity1 == celebrity2:
-        celebrity1 = celebrity()
-    print(f"Compare A: {format_data(celebrity1)}.")
-    print(vs)
-    print(f"Compare B: {format_data(celebrity2)}.")
-    choice = input("Who has more followers? Type 'A' or 'B': ").lower()
-    a_followers = celebrity1['follower_count']
-    b_followers = celebrity2['follower_count']
-    if check_answer(choice, a_followers, b_followers):
+def compare(account_a, account_b, guess):
+    global score
+    global should_continue
+    followers_a = account_a['follower_count']
+    followers_b = account_b['follower_count']
+    if guess == 'a' and followers_a > followers_b:
         score += 1
-        print(f"You're right! Current score: {score}.")
-
+        print(f"You're right! Current score: {score}")
+    elif guess == 'b' and followers_a < followers_b:
+        score += 1
+        print(f"You're right! Current score: {score}")
     else:
         print(f"Sorry, that's wrong. Final score: {score}")
-        should_continue = True
+        should_continue = False
+
+
+# Generate  a random account from the game data
+account_b = random.choice(data)
+while should_continue:
+    account_a = account_b
+    account_b = random.choice(data)
+    if account_a == account_b:
+        account_b = random.choice(data)
+
+    print(f"Compare A: {format_data(account_a)}")
+    print(vs)
+    print(f"Against B: {format_data(account_b)}")
+
+    # Ask user for a guess
+    guess = input("Who has more followers? Type 'A' or 'B': ")
+    compare(account_a, account_b, guess)

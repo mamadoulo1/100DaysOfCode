@@ -29,11 +29,4 @@ resources = {
     "milk": 200,
     "coffee": 100,
 }
-# user_input = input("What would you like? (espresso/latte/cappuccino):")
-#
-# for i in MENU:
-#     if i == user_input:
-#         print(MENU[i]['ingredients'])
-#         print(resources)
-#         for j in MENU[i]['ingredients']:
-#             print(MENU[i]['ingredients'][j])
+
