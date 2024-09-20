@@ -1,6 +1,6 @@
 import random
-import turtle
 from turtle import Turtle, Screen
+
 
 is_race_on = False
 tim = Turtle()
