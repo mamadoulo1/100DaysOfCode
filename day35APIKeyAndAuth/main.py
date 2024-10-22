@@ -11,7 +11,7 @@ params = {
 account_sid = ''
 auth_token = ''
 
-response = requests.get(f"https://api.openweathermap.org/data/2.5/forecast", params=params)
+response = requests.get(f"https://api.openweathermap.org/data/2.5/forecast", params=params, verify=False)
 response.raise_for_status()
 
 data = response.json()
@@ -26,7 +26,7 @@ if will_rain:
     client = Client(account_sid, auth_token)
     message = client.messages.create(
         body="It's going to rain today. Remember to bring an umbrella.",
-        from_="+18643875420",
-        to="+33626582134",
+        from_="",
+        to="",
     )
 print(message.status)
